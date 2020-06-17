@@ -1,0 +1,1323 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Centrifugo is a scalable real-time messaging server in language-agnostic way">
+      
+      
+        <link rel="canonical" href="https://centrifugal.github.io/centrifugo/">
+      
+      
+        <meta name="author" content="Centrifugal organization">
+      
+      <link rel="shortcut icon" href="docs/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.0">
+    
+    
+      
+        <title>Centrifugo</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.89dc9fe3.min.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecd4686e.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="docs/theme/styles/extra.css">
+    
+    
+      
+    
+    
+
+<!-- Determine title -->
+
+
+
+<!-- The image needs to have an absolute URL -->
+
+
+<!-- Open graph meta tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Centrifugo" />
+<meta property="og:description" content="Centrifugo is a scalable real-time messaging server in language-agnostic way" />
+<meta property="og:url" content="https://centrifugal.github.io/centrifugo/" />
+<meta property="og:image" content="https://centrifugal.github.io/centrifugo/images/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="960" />
+<meta property="og:image:height" content="960" />
+
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://centrifugal.github.io/centrifugo/" title="Centrifugo" class="md-header-nav__button md-logo" aria-label="Centrifugo">
+      
+  <img src="docs/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Centrifugo
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Centrifugo
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/centrifugal/centrifugo/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    centrifugal/centrifugo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="getting_started/" class="md-tabs__link">
+          Getting Started
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="server/configuration/" class="md-tabs__link">
+          Server
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="libraries/client/" class="md-tabs__link">
+          Libraries
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="faq/" class="md-tabs__link">
+          FAQ
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+
+<!-- Additional styles for landing page -->
+<style>
+
+    /* Application header should be static for the landing page */
+    .md-header {
+        position: initial;
+    }
+
+    /* Remove spacing, as we cannot hide it completely */
+    .md-main__inner {
+        margin: 0;
+    }
+
+    /* Hide main content for now */
+    .md-content {
+        display: none;
+    }
+
+    .tx-container {
+        height: 200px;
+        width: 436px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -218px;
+    }
+
+    /* Set inverted text color on hero */
+    .tx-hero {
+        margin: 0 .8rem;
+        color: var(--md-primary-bg-color);
+    }
+
+    .tx-hero h1 {
+        margin-bottom: 2rem;
+        color: currentColor;
+        font-weight: 900;
+        font-size: 4rem;
+    }
+
+    .tx-hero__content {
+        text-align: center;
+    }
+
+    /* Adjust spacing of buttons and invert them */
+    .tx-hero .md-button {
+        margin-top: .5rem;
+        margin-right: .5rem;
+        color: var(--md-primary-bg-color);
+    }
+
+    /* Invert primary button */
+    .tx-hero .md-button--primary {
+        color: rgb(254, 55, 55);
+        border-color: var(--md-primary-bg-color);
+    }
+
+    .md-typeset .md-button--primary {
+        background: none;
+    }
+
+    /* Invert hover and focus button states */
+    .tx-hero .md-button:hover,
+    .tx-hero .md-button:focus {
+        background-color: #cd0b0b;
+        color: white;
+        border-color: white;
+    }
+
+    /* [mobile portrait -]: Adjust headline */
+    @media screen and (max-width: 30em) {
+
+        /* Make main headline smaller */
+        .tx-hero h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    /* [tablet landscape +]: Display content and image next to each other */
+    @media screen and (min-width: 60em) {
+
+        /* Hide table of contents */
+        .md-sidebar--secondary {
+            display: none;
+        }
+
+        /* Use flex layout to align items */
+        .tx-hero {
+            display: flex;
+            align-items: stretch;
+        }
+
+        /* Swap with teaser and set dimensions */
+        .tx-hero__image {
+            width: 38rem;
+            order: 1;
+            transform: translateX(4rem);
+        }
+    }
+
+    /* [screen +]: Adjust spacing */
+    @media screen and (min-width: 76.25em) {
+
+        /* Hide navigation */
+        .md-sidebar--primary {
+            display: none;
+        }
+
+        /* Ensure the image aligns with the repository information */
+        .tx-hero__image {
+            transform: translateX(8rem);
+        }
+    }
+
+    body {
+        background: black;
+    }
+
+    canvas#canvas {
+        display: block;
+        background: black;
+    }
+
+    .welcome {
+        padding-top: 40px;
+        width: 99.9%;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .valign {
+        display: inline-block;
+        vertical-align: middle;
+        width: .1%;
+        height: 100%;
+    }
+
+    .inner {
+        width: 100%;
+        max-width: 980px;
+        padding: 0 20px;
+        margin: 0 auto;
+        position: relative;
+    }
+</style>
+<canvas id="canvas">Canvas not supported.</canvas>
+<script type="text/javascript">
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var canvas = document.getElementById('canvas');
+
+            if (!canvas || !canvas.getContext) {
+                return false;
+            }
+
+            var viewportOffset = canvas.getBoundingClientRect();
+            var top = viewportOffset.top;
+
+            var ctx = canvas.getContext('2d');
+            var X = canvas.width = window.innerWidth;
+            var Y = canvas.height = window.innerHeight - top;
+            var centerX = X / 2;
+            var centerY = Y / 2;
+            var lineColor = '#9c090e';
+            var segmentColor = '#300808';
+
+            var linesNum = 3;
+            var lines = [];
+
+            var segments = [];
+            var radius = Y / 10;
+            var lw = radius / 16;
+            var blur = 5;
+
+            function rand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+                var angleInRadians = angleInDegrees * Math.PI / 180.0;
+                var x = centerX + (radius * Math.cos(angleInRadians));
+                var y = centerY + (radius * Math.sin(angleInRadians));
+                return [x, y];
+            }
+
+            function cartesianToPolar(centerX, centerY, radius, X, Y) {
+                var radians = Math.atan2(Y-centerY, X-centerX);
+                return radians * 180 / Math.PI;
+            }
+
+            window.requestAnimationFrame =
+                window.requestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function(cb) {
+                    setTimeout(cb, 17);
+                };
+
+            function Line(ctx, x, y) {
+                this.ctx = ctx;
+                this.init(x, y);
+            }
+
+            Line.prototype.init = function(x, y) {
+                this.x = x;
+                this.y = y;
+                this.c = lineColor;
+                this.lw = 1;
+                this.v = {
+                    x: 2 * Math.random(),
+                    y: 2 * Math.random()
+                };
+            };
+
+            Line.prototype.draw = function() {
+                var ctx = this.ctx;
+                ctx.save();
+                ctx.lineWidth = this.lw;
+                ctx.strokeStyle = this.c;
+                ctx.beginPath();
+                ctx.moveTo(0, this.y);
+                ctx.lineTo(X, this.y);
+                ctx.stroke();
+                ctx.lineWidth = this.lw;
+                ctx.beginPath();
+                ctx.moveTo(this.x, 0);
+                ctx.lineTo(this.x, Y);
+                ctx.stroke();
+                ctx.restore();
+            };
+
+            Line.prototype.updatePosition = function() {
+                this.x += this.v.x;
+                this.y += this.v.y;
+            };
+
+            Line.prototype.wrapPosition = function() {
+                if (this.x < 0) this.x = X;
+                if (this.x > X) this.x = 0;
+                if (this.y < 0) this.y = Y;
+                if (this.y > Y) this.y = 0;
+            };
+
+            Line.prototype.updateParams = function() {
+            };
+
+            Line.prototype.render = function() {
+                this.updatePosition();
+                this.wrapPosition();
+                this.updateParams();
+                this.draw();
+            };
+
+            for (var i = 0; i < linesNum; i++) {
+                var line = new Line(ctx, rand(0, X), rand(0, Y));
+                lines.push(line);
+            }
+
+            function Segment(ctx, x, y, r, w, rotate, speed, angleDiff) {
+                this.ctx = ctx;
+                this.init(x, y, r, w, rotate, speed, angleDiff);
+            }
+
+            Segment.prototype.init = function(x, y, r, w, rotate, speed, angleDiff) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.w = w;
+                this.c = segmentColor;
+                this.rotate = rotate;
+                this.speed = speed;
+                this.angleDiff = angleDiff;
+                this.a = 0;
+            };
+
+            Segment.prototype.drawSegment = function(fromAngle, toAngle, rotateAngle) {
+                ctx.translate(this.x, this.y);
+                ctx.rotate(rotateAngle * Math.PI / 180 );
+                ctx.translate(-this.x, -this.y);
+                ctx.beginPath();
+
+                var res = polarToCartesian(this.x, this.y, this.r, fromAngle);
+                var startX = res[0];
+                var startY = res[1];
+                var res = polarToCartesian(this.x, this.y, this.r, toAngle);
+                var endX = res[0];
+                var endY = res[1];
+
+                var anotherX = startX - this.w;
+                var anotherY = endY - this.w;
+                var innerAngleStart = cartesianToPolar(this.x, this.y, this.r, anotherX, startY);
+                var innerAngleEnd = cartesianToPolar(this.x, this.y, this.r, endX, anotherY);
+                var toAngleRad = toAngle * Math.PI / 180;
+                var fromAngleRad = fromAngle * Math.PI / 180;
+                var innerAngleStartRad = innerAngleStart * Math.PI / 180;
+                var innerAngleEndRad = innerAngleEnd * Math.PI / 180;
+
+                ctx.arc(this.x, this.y, this.r, toAngleRad, fromAngleRad, true);
+                ctx.arc(this.x, this.y, this.r-this.w, innerAngleStartRad, innerAngleEndRad, false);
+                ctx.closePath();
+                ctx.fillStyle = segmentColor;
+                ctx.fill();
+                ctx.stroke();
+            }
+
+            Segment.prototype.draw = function() {
+                var ctx = this.ctx;
+                ctx.save();
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = segmentColor;
+                ctx.shadowColor = segmentColor;
+                // ctx.shadowBlur = blur;
+                this.drawSegment(4 + this.angleDiff, 86 - this.angleDiff, this.rotate + this.a);
+                ctx.restore();
+            };
+
+            Segment.prototype.resize = function() {
+                this.x = X / 2;
+                this.y = Y / 2;
+            };
+
+            Segment.prototype.updateParams = function() {
+                this.a += this.speed * radius/this.r;
+            };
+
+            Segment.prototype.render = function() {
+                this.updateParams();
+                this.draw();
+            };
+
+            segments.push(new Segment(ctx, centerX, centerY, radius * 2.65, lw * 9, 0, -1.5, 0));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 2.65, lw * 9, 90, -1.5, 0));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 2.65, lw * 9, 180, -1.5, 0));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 2.65, lw * 9, 270, -1.5, 0));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 1.45, lw * 8, 45, 1.5, 2));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 1.45, lw * 8, 135, 1.5, 2));
+            segments.push(new Segment(ctx, centerX, centerY, radius * 1.45, lw * 8, 225, 1.5, 2));
+
+            function render(){
+                ctx.clearRect(0, 0, X, Y);
+                for (var i = 0; i < lines.length; i++) {
+                    lines[i].render();
+                }
+                for (var i = 0; i < segments.length; i++) {
+                    segments[i].render();
+                }
+                requestAnimationFrame(render);
+            }
+
+            render();
+
+            function onResize() {
+                X = canvas.width = window.innerWidth;
+                Y = canvas.height = window.innerHeight;
+                for (let i = 0; i < segments.length; i++) {
+                    segments[i].resize();
+                }
+            }
+
+            window.addEventListener('resize', function() {
+                onResize();
+            });
+        });
+    })();
+</script>
+
+<section class="tx-container">
+    <div class="md-grid md-typeset tx-wrapper">
+        <div class="tx-hero">
+            <!-- Hero content -->
+            <div class="tx-hero__content">
+                <h1>Centrifugo</h1>
+                <p>Centrifugo is a scalable real-time messaging server in language-agnostic way. Set up once and forever.</p>
+                <a
+                        href="getting_started/"
+                        title="What is Centrifugo"
+                        class="md-button md-button--primary"
+                >
+                    Get started
+                </a>
+                <a
+                        href="https://github.com/centrifugal/centrifugo/"
+                        title="Go to repository"
+                        class="md-button"
+                >
+                    Go to GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://centrifugal.github.io/centrifugo/" title="Centrifugo" class="md-nav__button md-logo" aria-label="Centrifugo">
+      
+  <img src="docs/images/logo.png" alt="logo">
+
+    </a>
+    Centrifugo
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/centrifugal/centrifugo/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    centrifugal/centrifugo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+      Home
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="getting_started/" title="What is Centrifugo" class="md-nav__link">
+      What is Centrifugo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="quick_start/" title="Quick start" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="guide/" title="Integration Guide" class="md-nav__link">
+      Integration Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Server
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Server" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/channels/" title="Channels" class="md-nav__link">
+      Channels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/authentication/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/private_channels/" title="Private channels" class="md-nav__link">
+      Private channels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/engines/" title="Engines" class="md-nav__link">
+      Engines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/http_api/" title="Server HTTP API" class="md-nav__link">
+      Server HTTP API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/grpc_api/" title="Server GRPC API" class="md-nav__link">
+      Server GRPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/admin/" title="Admin web interface" class="md-nav__link">
+      Admin web interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/proxy/" title="Proxy to backend" class="md-nav__link">
+      Proxy to backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/server_subs/" title="Server-side subscriptions" class="md-nav__link">
+      Server-side subscriptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/recover/" title="Message recovery" class="md-nav__link">
+      Message recovery
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/signals/" title="Signal handling" class="md-nav__link">
+      Signal handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/connection_expiration/" title="Connection expiration" class="md-nav__link">
+      Connection expiration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
+    
+    <label class="md-nav__link" for="nav-3-14">
+      Transports
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Transports" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Transports
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="transports/" title="Transports overview" class="md-nav__link">
+      Transports overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="transports/websocket/" title="Websocket" class="md-nav__link">
+      Websocket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="transports/sockjs/" title="SockJS" class="md-nav__link">
+      SockJS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-15" type="checkbox" id="nav-3-15">
+    
+    <label class="md-nav__link" for="nav-3-15">
+      Deploy
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Deploy" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Deploy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="deploy/nginx/" title="Nginx configuration" class="md-nav__link">
+      Nginx configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="deploy/monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="deploy/tuning/" title="OS tuning" class="md-nav__link">
+      OS tuning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="deploy/tls/" title="TLS" class="md-nav__link">
+      TLS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/protobuf/" title="Protobuf protocol" class="md-nav__link">
+      Protobuf protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17">
+    
+    <label class="md-nav__link" for="nav-3-17">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="misc/insecure_modes/" title="Insecure modes" class="md-nav__link">
+      Insecure modes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="misc/benchmark/" title="Benchmarking server" class="md-nav__link">
+      Benchmarking server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="misc/migrate/" title="Migrate from Centrifugo v1" class="md-nav__link">
+      Migrate from Centrifugo v1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="server/protocol/" title="Client protocol" class="md-nav__link">
+      Client protocol
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Libraries
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Libraries" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Libraries
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="libraries/client/" title="Client libraries" class="md-nav__link">
+      Client libraries
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="libraries/api/" title="API libraries" class="md-nav__link">
+      API libraries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      FAQ
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="FAQ" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        FAQ
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
