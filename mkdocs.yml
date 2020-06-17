@@ -45,63 +45,63 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# theme:
-#   # name: 'material'
-#   # custom_dir: material
-#   language: en
-#   include_sidebar: true
-# #   favicon: images/favicon.png
-# #   logo: images/logo.png
-#   palette:
-#     primary: 'black'
-#     accent: 'cyan'
-#   i18n:
-#     prev: 'Previous'
-#     next: 'Next'
-#   features:
-#     - tabs
+theme:
+  name: 'material'
+  custom_dir: docs/material
+  language: en
+  include_sidebar: true
+  favicon: docs/images/favicon.png
+  logo: docs/images/logo.png
+  palette:
+    primary: 'black'
+    accent: 'cyan'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
+  features:
+    - tabs
 
-# extra_css:
-#   - theme/styles/extra.css
+extra_css:
+  - docs/theme/styles/extra.css
 
 nav:
   - Home: 'index.md'
-#   - Getting Started:
-#     - What is Centrifugo: 'getting_started.md'
-#     - Installation: 'install.md'
-#     - Quick start: 'quick_start.md'
-#     - Integration Guide: 'guide.md'
-#   - Server:
-#     - Configuration: 'server/configuration.md'
-#     - Channels: 'server/channels.md'
-#     - Authentication: 'server/authentication.md'
-#     - Private channels: 'server/private_channels.md'
-#     - Engines: 'server/engines.md'
-#     - Server HTTP API: 'server/http_api.md'
-#     - Server GRPC API: 'server/grpc_api.md'
-#     - Admin web interface: 'server/admin.md'
-#     - Proxy to backend: 'server/proxy.md'
-#     - Server-side subscriptions: 'server/server_subs.md'
-#     - Message recovery: 'server/recover.md'
-#     - Signal handling: 'server/signals.md'
-#     - Connection expiration: 'server/connection_expiration.md'
-#     - Transports:
-#       - Transports overview: 'transports/index.md'
-#       - Websocket: 'transports/websocket.md'
-#       - SockJS: 'transports/sockjs.md'
-#     - Deploy:
-#         - Nginx configuration: 'deploy/nginx.md'
-#         - Monitoring: 'deploy/monitoring.md'
-#         - OS tuning: 'deploy/tuning.md'
-#         - TLS: 'deploy/tls.md'
-#     - Protobuf protocol: 'server/protobuf.md'
-#     - Misc:
-#         - Insecure modes: 'misc/insecure_modes.md'
-#         - Benchmarking server: 'misc/benchmark.md'
-#         - Migrate from Centrifugo v1: 'misc/migrate.md'
-#     - Client protocol: 'server/protocol.md'
-#   - Libraries:
-#     - Client libraries: 'libraries/client.md'
-#     - API libraries: 'libraries/api.md'
-#   - FAQ:
-#     - 'faq.md'
+  - Getting Started:
+    - What is Centrifugo: 'getting_started.md'
+    - Installation: 'install.md'
+    - Quick start: 'quick_start.md'
+    - Integration Guide: 'guide.md'
+  - Server:
+    - Configuration: 'server/configuration.md'
+    - Channels: 'server/channels.md'
+    - Authentication: 'server/authentication.md'
+    - Private channels: 'server/private_channels.md'
+    - Engines: 'server/engines.md'
+    - Server HTTP API: 'server/http_api.md'
+    - Server GRPC API: 'server/grpc_api.md'
+    - Admin web interface: 'server/admin.md'
+    - Proxy to backend: 'server/proxy.md'
+    - Server-side subscriptions: 'server/server_subs.md'
+    - Message recovery: 'server/recover.md'
+    - Signal handling: 'server/signals.md'
+    - Connection expiration: 'server/connection_expiration.md'
+    - Transports:
+      - Transports overview: 'transports/index.md'
+      - Websocket: 'transports/websocket.md'
+      - SockJS: 'transports/sockjs.md'
+    - Deploy:
+        - Nginx configuration: 'deploy/nginx.md'
+        - Monitoring: 'deploy/monitoring.md'
+        - OS tuning: 'deploy/tuning.md'
+        - TLS: 'deploy/tls.md'
+    - Protobuf protocol: 'server/protobuf.md'
+    - Misc:
+        - Insecure modes: 'misc/insecure_modes.md'
+        - Benchmarking server: 'misc/benchmark.md'
+        - Migrate from Centrifugo v1: 'misc/migrate.md'
+    - Client protocol: 'server/protocol.md'
+  - Libraries:
+    - Client libraries: 'libraries/client.md'
+    - API libraries: 'libraries/api.md'
+  - FAQ:
+    - 'faq.md'
