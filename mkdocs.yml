@@ -45,21 +45,21 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-theme:
-  # name: 'material'
-  # custom_dir: material
-  language: en
-  include_sidebar: true
-#   favicon: images/favicon.png
-#   logo: images/logo.png
-  palette:
-    primary: 'black'
-    accent: 'cyan'
-  i18n:
-    prev: 'Previous'
-    next: 'Next'
-  features:
-    - tabs
+# theme:
+#   # name: 'material'
+#   # custom_dir: material
+#   language: en
+#   include_sidebar: true
+# #   favicon: images/favicon.png
+# #   logo: images/logo.png
+#   palette:
+#     primary: 'black'
+#     accent: 'cyan'
+#   i18n:
+#     prev: 'Previous'
+#     next: 'Next'
+#   features:
+#     - tabs
 
 # extra_css:
 #   - theme/styles/extra.css
