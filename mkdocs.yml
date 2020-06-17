@@ -46,8 +46,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 theme:
-  name: 'material'
-  custom_dir: material
+  # name: 'material'
+  # custom_dir: material
   language: en
   include_sidebar: true
 #   favicon: images/favicon.png
